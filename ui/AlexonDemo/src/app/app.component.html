@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My HTML Page</title>
+</head>
+
+<body>
+    <div class="لوحة التحكم">
+        <div class="farme14">
+            <div class="Rectangle1">
+
+                <div class="Login-Row-container">
+                    <div class="Login-container">
+                        <p dir="rtl" class="login-name">محمد</p>
+                        <p dir="rtl" class="login-job">مراجع الشكاوى</p>
+                    </div>
+                    <img src="../assets/emp.png" alt="Image" class="circular-image">
+                </div>
+                <div class="Fram-14">
+                    <button class="Arabic-Language">
+                        AR
+                    </button>
+                    <button class="bell-button">
+                            <img class="Outline-bell" src="../assets/bell.png" alt="Image" class="circular-image">
+
+                    </button>
+                </div>
+
+                <form action="">
+                    <button type="submit" class="Search-Bar"><i class="fas fa-search" ></i> <span dir="rtl" class="search-text">ما الذي تبحث عنه ؟</span>
+                        <div class="search-container">
+                            <img src="../assets/search.png" alt="Image" class="search-image">
+                        </div>
+                    </button>
+                </form>
+            </div>
+
+
+        </div>
+        <div class="classification1">
+            <div class="classification1-container">
+                <p dir="rtl" class="orange-text">الشكاوى الجديدة</p>
+                <p dir="rtl" class="orange-number">150</p>
+            </div>
+        </div>
+        <div class="classification2">
+            <div class="classification2-container">
+                <p dir="rtl" class="green-text">شكاوى تم قبولها</p>
+                <p dir="rtl" class="green-number">150</p>
+            </div>
+        </div>
+        <div class="classification3">
+            <div class="classification3-container">
+                <p dir="rtl" class="pink-text">الشكاوى المرفوضة</p>
+                <p dir="rtl" class="pink-number">44</p>
+            </div>
+        </div>
+
+        <div class="classification4">
+            <div class="classification4-container">
+                <p dir="rtl" class="blue-text">الشكاوى المرفوضة</p>
+                <p dir="rtl" class="blue-number">44</p>
+            </div>
+        </div>
+
+
+        <p dir="rtl" class="complain">الشكاوي الجديدة</p>
+
+        <div class="date-container">
+
+            <select name="" id="" dir="rtl" class="date-input">
+                <option value="" dir="rtl">الكل</option>
+            </select>
+
+            <p class="date-text" dir="rtl">التاريخ</p>
+
+        </div>
+        <p class="classification-text" dir="rtl">التصنيف</p>
+
+        <select name="" id="" dir="rtl" class="classification-input">
+            <option value="" dir="rtl">الكل</option>
+        </select>
+
+        <div class="status-container">
+
+            <select name="" id="" dir="rtl" class="status-input">
+                <option value="" dir="rtl">الكل</option>
+            </select>
+
+            <p class="status-text" dir="rtl">الحالة</p>
+
+        </div>
+
+
+        <table class="complain-table ">
+            <thead class="table-thead">
+                <tr>
+                    <th class="th7">عرض</th>
+                    <th class="th6">الحالة</th>
+                    <th class="th5">الادارة</th>
+                    <th class="th4">المدينة</th>
+                    <th class="th3">تاريخ الشكوى</th>
+                    <th class="th2">نوع الشكوى</th>
+                    <th class="th1">رقم الشكوى</th>
+                </tr>
+            </thead>
+            <tbody class="">
+                <tr *ngFor="let complain of data" class="">
+                    <td class="عرض" dir="rtl"><img class="eye" src="../assets/{{complain.display}}" alt="Image" class="search-image"></td>
+
+                    <td class="الحالة" dir="rtl" [ngSwitch]="complain.status">
+                        <div dir="rtl" *ngSwitchCase="'مرفوضة'" class="style1">مرفوضة</div>
+                        <div dir="rtl" *ngSwitchCase="'معلقة'" class="style2">معلقة</div>
+                        <div dir="rtl" *ngSwitchDefault class="defaultStyle">تحت المراجعة</div>
+                    </td>
+
+
+                    <td class="الادارة" dir="rtl">{{complain.department}}</td>
+                    <td class="المدينة" dir="rtl">{{complain.city}}</td>
+                    <td class="تاريخ" dir="rtl">{{complain.complainDate}}</td>
+                    <td class="نوع" dir="rtl">{{complain.complainType}}</td>
+                    <td class="" dir="rtl">
+                        <p class="رقم">{{complain.id}}</p>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
